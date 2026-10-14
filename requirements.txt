@@ -1,0 +1,20 @@
+# Core loop
+langgraph>=0.2.0
+ollama>=0.3.0
+
+# RAG memory (LlamaIndex + LanceDB)
+llama-index-core>=0.14.0
+llama-index-vector-stores-lancedb>=0.1.0
+llama-index-embeddings-ollama>=0.4.0
+lancedb>=0.38.0
+pandas>=2.0.0   # required by llama-index-vector-stores-lancedb but not
+                # declared as one of its own dependencies -- found by
+                # testing install.ps1 against a genuinely fresh venv,
+                # which every earlier test in this project's development
+                # hadn't done (they all reused one long-lived, already-
+                # populated Python environment where this was silently
+                # present already)
+
+# Backend
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
