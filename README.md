@@ -14,6 +14,7 @@ candidate modifications to gravity, fits its single free parameter to
 Mercury exactly, and finds out whether that same fit survives everywhere
 else. It remembers past attempts via RAG(Retrieval-Augmented Generation) so it doesn't re-propose a family
 it's already ruled out.
+
 For the complete project description and installation instructions, please read:
     'docs/Physics-ASI-Concepts.pdf'
 
