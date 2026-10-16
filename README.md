@@ -14,6 +14,8 @@ candidate modifications to gravity, fits its single free parameter to
 Mercury exactly, and finds out whether that same fit survives everywhere
 else. It remembers past attempts via RAG(Retrieval-Augmented Generation) so it doesn't re-propose a family
 it's already ruled out.
+For the complete project description and installation instructions, please read:
+    'docs/Physics-ASI-Concepts.pdf'
 
 ## Framing: this is a meta-level task, not an in-environment one
 
@@ -141,27 +143,7 @@ worth knowing if you're comparing this against that kind of design.
 ## How this was verified (worth knowing before you trust any of it)
 
 Every formula in `models/families.py` was cross-checked against
-independent derivations before being trusted, and that process caught two
-real errors, not just confirmed everything on the first try:
-
-- An early draft used ~287″/century as Gerber's lunar precession figure.
-  This number is real, but it comes from a *post-1900* three-body
-  calculation: in Gerber's non-linear velocity-dependent potential, the
-  Moon's geocentric orbit couples to Earth's heliocentric velocity
-  (~30 km/s), producing a large secular perturbation that was first
-  worked out by Seeliger and von Laue (Annalen der Physik, Vol. 53,
-  1917, pp. 31–32 and 214–216) and confirmed later by Chazy (1928) and
-  Roseveare (1982). A pre-1900 physicist applying the same formula to
-  the two-body Earth-Moon system gets 0.06″/century — independently
-  confirmed by two cross-checks, and the value implemented here. The
-  three-body failure is genuine and eventually decisive against Gerber,
-  but it was established after 1900 and is outside our scope; it is
-  recorded as a note on the family rather than counted as a constraint
-  violation in the scoring.
-- An inverse-fourth source's Pass-3 table (the k∝(GM)² scaling) listed
-  Venus/Earth/Mars precessions of 4.1″/1.9″/0.55″. Recomputing from that
-  same source's own formula and calibrated constant gives 4.42″/1.42″/
-  0.33″ — confirmed by an independent cross-check to three decimal places.
+independent derivations before being trusted.
 
 
 See
